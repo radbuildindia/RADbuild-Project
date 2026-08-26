@@ -17,23 +17,5 @@ if (menuToggle && mobileNav) {
   });
 }
 
-const contactForm = document.querySelector('#contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const data = new FormData(contactForm);
-    const name = data.get('name') || '';
-    const email = data.get('email') || '';
-    const phone = data.get('phone') || '';
-    const project = data.get('project') || '';
-    const message = data.get('message') || '';
-    const subject = encodeURIComponent(`RADbuild enquiry — ${project || 'New project'}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nProject: ${project}\n\nMessage:\n${message}`
-    );
-    window.location.href = `mailto:hello@radbuild.co.in?subject=${subject}&body=${body}`;
-  });
-}
-
 const year = document.querySelector('[data-year]');
 if (year) year.textContent = new Date().getFullYear();

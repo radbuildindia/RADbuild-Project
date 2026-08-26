@@ -1,36 +1,74 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact RADbuild | Radiology Infrastructure</title><meta name="description" content="Talk to RADbuild about your radiology project — site feasibility, imaging room design, shielding coordination and project management across India."><meta name="theme-color" content="#071b2b"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="CSS/style.css"><link rel="canonical" href="https://radbuild.co.in/Contact.html"></head><body>
+<div class="topbar"><div class="container topbar-inner"><div class="topbar-left"><span>RADIOLOGY INFRASTRUCTURE SPECIALISTS</span><span>•</span><span>INDIA</span></div><div class="topbar-right"><a href="mailto:hello@radbuild.co.in">hello@radbuild.co.in</a><a href="tel:+919999166302">+91 99991 66302</a></div></div></div>
+<header class="header"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark">RB</span><span><span class="brand-name"><span class="rad">RAD</span><span class="build">build</span></span><span class="brand-sub">BY ADS INFRASOLUTION PVT LTD</span></span></a><nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="Services.html">Services</a><a href="Projects.html">Projects</a><a href="Process.html">Process</a><a class="nav-cta" href="Contact.html">Contact Us</a></nav><button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div><nav class="mobile-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="Services.html">Services</a><a href="Projects.html">Projects</a><a href="Process.html">Process</a><a class="mobile-cta" href="Contact.html">Contact Us →</a></nav></header>
+<main><section class="page-hero"><div class="container"><div class="section-label">Contact</div><h1>Tell us about your imaging project.</h1><p>Share your site, equipment and project stage. We will come back to you with the right next step — feasibility, room design, shielding coordination or full project management.</p></div></section>
+<section class="section"><div class="container"><div class="contact-layout">
+<div class="contact-card"><div class="section-label" style="color:#7fd8d2">Reach us</div><h2>Speak to the RADbuild team.</h2><p>Radiology infrastructure, engineering and project coordination for diagnostic imaging facilities across India.</p><div class="contact-items"><div class="contact-item"><small>Phone</small><a href="tel:+919999166302">+91 99991 66302</a></div><div class="contact-item"><small>Email</small><a href="mailto:hello@radbuild.co.in">hello@radbuild.co.in</a></div><div class="contact-item"><small>WhatsApp</small><a href="https://wa.me/919999166302">Message us on WhatsApp</a></div><div class="contact-item"><small>Company</small><span>ADS Infrasolution Pvt Ltd</span></div><div class="contact-item"><small>Coverage</small><span>Projects across India</span></div></div></div>
+<div class="contact-form"><h2>Project enquiry</h2><p>Fill in the details below and send it straight to us — we usually reply within one working day.</p>
+<form id="contactForm" novalidate>
+<input type="hidden" name="access_key" value="a86c2727-b92c-4c84-8b07-8da7d9a1d956">
+<input type="hidden" name="subject" value="New RADbuild enquiry">
+<input type="hidden" name="from_name" value="RADbuild Website">
+<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+<div class="form-grid">
+<div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+<div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+<div class="field"><label for="project">Project / Modality</label><input id="project" name="project" type="text" placeholder="MRI, CT, Cathlab, PET-CT…"></div>
+<div class="field full"><label for="message">Tell us about the project</label><textarea id="message" name="message" required></textarea></div>
+</div>
+<div class="form-actions"><button class="btn btn-primary" type="submit">Send Enquiry →</button><span class="form-note" id="formNote" role="status" aria-live="polite">Sent directly to our team — you stay on this page.</span></div>
+</form>
+</div>
+</div></div></section>
+<section class="cta"><div class="container cta-inner"><div><h2>Prefer to talk it through?</h2><p>Call or message us and we will take it from there.</p></div><a class="btn" href="https://wa.me/919999166302">WhatsApp RADbuild →</a></div></section></main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="index.html"><span class="brand-mark">RB</span><span><span class="brand-name"><span class="rad">RAD</span><span class="build">build</span></span><span class="brand-sub">BY ADS INFRASOLUTION PVT LTD</span></span></a><p>Radiology infrastructure, engineering and project coordination for diagnostic imaging facilities across India.</p></div><div><h4>Company</h4><div class="footer-links"><a href="about.html">About RADbuild</a><a href="Projects.html">Projects</a><a href="Process.html">Our Process</a><a href="Contact.html">Contact</a></div></div><div><h4>Services</h4><div class="footer-links"><a href="Services.html">Site Feasibility</a><a href="Services.html">Room Design</a><a href="Services.html">Shielding</a><a href="Services.html">Project Management</a></div></div><div><h4>Contact</h4><div class="footer-links"><a href="tel:+919999166302">+91 99991 66302</a><a href="mailto:hello@radbuild.co.in">hello@radbuild.co.in</a><a href="https://wa.me/919999166302">WhatsApp</a><span>India</span></div></div></div><div class="footer-bottom"><span>© <span data-year>2026</span> RADbuild. A brand of ADS Infrasolution Pvt Ltd.</span><span>Radiology Infrastructure • India</span></div></div></footer>
+<script src="script.js"></script>
 <script>
-const contactForm = document.getElementById("contactForm");
-const formNote = document.getElementById("formNote");
+const contactForm = document.getElementById('contactForm');
+const formNote = document.getElementById('formNote');
+const submitBtn = contactForm.querySelector('button[type="submit"]');
+const IDLE_NOTE = formNote.textContent;
 
-contactForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
+function setNote(text, state) {
+  formNote.textContent = text;
+  formNote.className = state ? 'form-note ' + state : 'form-note';
+}
 
-    const submitBtn = contactForm.querySelector("button[type='submit']");
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Sending...";
+contactForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
 
-    const formData = new FormData(contactForm);
+  if (!contactForm.reportValidity()) return;
 
-    try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData,
-        });
-        const result = await response.json();
+  const data = new FormData(contactForm);
+  const project = (data.get('project') || '').toString().trim();
+  data.set('subject', `New RADbuild enquiry — ${project || 'General'}`);
 
-        if (result.success) {
-            contactForm.reset();
-            formNote.textContent = "Thanks! Your enquiry has been sent — we'll be in touch.";
-            submitBtn.textContent = "Sent ✓";
-        } else {
-            formNote.textContent = "Something went wrong. Please try again or email us directly.";
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Send Enquiry →";
-        }
-    } catch (error) {
-        formNote.textContent = "Something went wrong. Please try again or email us directly.";
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Send Enquiry →";
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+  setNote('Sending your enquiry…');
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+    const result = await response.json();
+
+    if (result.success) {
+      contactForm.reset();
+      submitBtn.textContent = 'Sent ✓';
+      setNote('Thanks — your enquiry has reached us. We will be in touch shortly.', 'ok');
+      return;
     }
+    throw new Error(result.message || 'Submission rejected');
+  } catch (error) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Enquiry →';
+    setNote('Could not send just now. Please retry, or reach us on +91 99991 66302 / hello@radbuild.co.in.', 'err');
+  }
+});
+
+contactForm.addEventListener('input', () => {
+  if (submitBtn.disabled) return;
+  if (formNote.textContent !== IDLE_NOTE) setNote(IDLE_NOTE);
 });
 </script>
+</body></html>
