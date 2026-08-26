@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://radbuild.co.in/sitemap.xml
+Sitemap: https://www.radbuild.co.in/sitemap.xml
