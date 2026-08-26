@@ -45,6 +45,13 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.025em;line-height:
 .menu-toggle span{display:block;width:16px;height:1.5px;background:var(--ink);margin:3.5px auto;border-radius:2px}
 .mobile-nav{display:none}
 
+/* breadcrumbs */
+.crumbs{background:#fff;border-bottom:1px solid var(--line)}
+.crumbs .container{display:flex;align-items:center;gap:9px;padding:13px 0;font-size:12px;color:var(--muted)}
+.crumbs a{color:var(--body)}
+.crumbs a:hover{color:var(--accent)}
+.crumbs [aria-current]{color:var(--ink);font-weight:600}
+
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:6px;border:1px solid transparent;font-size:14px;font-weight:600;letter-spacing:-.01em;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
 .btn-primary{background:var(--accent);color:#fff}
@@ -178,6 +185,33 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.025em;line-height:
 .footer-links a:hover{color:var(--accent)}
 .footer-bottom{padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:12px;color:var(--muted)}
 
+/* long-form guide pages */
+.prose{max-width:760px}
+.prose h2{font-size:26px;margin:46px 0 14px}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:18px;margin:30px 0 8px}
+.prose p{margin-bottom:14px;font-size:15px;color:var(--body)}
+.prose ul,.prose ol{list-style:none;display:grid;gap:10px;margin:18px 0}
+.prose li{position:relative;padding-left:22px;font-size:15px;color:var(--body)}
+.prose li::before{content:"";position:absolute;left:0;top:11px;width:10px;height:1.5px;background:var(--accent)}
+.prose strong{color:var(--ink);font-weight:600}
+.prose a{color:var(--accent);font-weight:500}
+.prose a:hover{color:var(--accent-dark)}
+.callout{max-width:760px;margin:30px 0;padding:22px 24px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;background:var(--wash);font-size:15px;color:var(--body)}
+.callout strong{color:var(--ink);font-weight:600}
+.faq{max-width:760px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:18px 0;cursor:pointer;font-size:16px;font-weight:600;color:var(--ink);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;color:var(--accent);font-weight:600}
+.faq details[open] summary::after{content:"\2212"}
+.faq details > div{padding:0 0 20px;font-size:15px;color:var(--body)}
+.related{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.related a{display:block;padding:22px 24px;background:#fff}
+.related a:hover{background:var(--wash)}
+.related strong{display:block;font-size:15px;font-weight:600;color:var(--ink)}
+.related span{display:block;margin-top:5px;font-size:13px;color:var(--muted)}
+
 /* floating WhatsApp */
 .wa-float{position:fixed;right:22px;bottom:22px;z-index:200;display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border-radius:999px;background:#25d366;color:#fff;font-size:14px;font-weight:600;box-shadow:0 6px 22px rgba(37,211,102,.32);transition:background .15s}
 .wa-float:hover{background:#1eb457}
@@ -233,6 +267,8 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.025em;line-height:
   .page-hero{padding:64px 0 52px}
   .wa-float{right:14px;bottom:14px;padding:13px;border-radius:50%}
   .wa-float span{display:none}
+  .related{grid-template-columns:1fr}
+  .prose h2{font-size:22px;margin:34px 0 12px}
 }
 @media(max-width:450px){
   .brand-name{font-size:21px}
