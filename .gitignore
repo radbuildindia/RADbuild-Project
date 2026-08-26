@@ -1,0 +1,4 @@
+# Local backups and stale duplicates — kept on disk, never deployed.
+# Serving these publicly creates duplicate content competing with the live pages.
+index backup.html
+Radbuild Website/
