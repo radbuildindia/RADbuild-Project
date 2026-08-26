@@ -16,7 +16,7 @@
 <div class="field"><label for="project">Project / Modality</label><input id="project" name="project" type="text" placeholder="MRI, CT, Cathlab, PET-CT…"></div>
 <div class="field full"><label for="message">Tell us about the project</label><textarea id="message" name="message" required></textarea></div>
 </div>
-<div class="form-actions"><button class="btn btn-primary" type="submit">Send Enquiry →</button><span class="form-note" id="formNote" role="status" aria-live="polite">Sent directly to our team — you stay on this page.</span></div>
+<div class="form-actions"><button class="btn btn-primary" type="submit">Send Enquiry →</button><button class="btn btn-secondary" type="button" id="waSend">Send on WhatsApp</button><span class="form-note" id="formNote" role="status" aria-live="polite">Sent directly to our team — you stay on this page.</span></div>
 </form>
 </div>
 </div></div></section>
@@ -70,5 +70,29 @@ contactForm.addEventListener('input', () => {
   if (submitBtn.disabled) return;
   if (formNote.textContent !== IDLE_NOTE) setNote(IDLE_NOTE);
 });
+
+// Same details, sent over WhatsApp instead of email.
+document.getElementById('waSend').addEventListener('click', () => {
+  const data = new FormData(contactForm);
+  const field = (key) => (data.get(key) || '').toString().trim();
+
+  if (!field('name') || !field('message')) {
+    setNote('Please add your name and a short note about the project first.', 'err');
+    return;
+  }
+
+  const lines = [
+    'RADbuild enquiry',
+    `Name: ${field('name')}`,
+    field('email') && `Email: ${field('email')}`,
+    field('phone') && `Phone: ${field('phone')}`,
+    field('project') && `Project: ${field('project')}`,
+    '',
+    field('message'),
+  ].filter(Boolean);
+
+  window.open('https://wa.me/919999166302?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+  setNote('Opening WhatsApp with your details filled in.', 'ok');
+});
 </script>
-</body></html>
+<a class="wa-float" href="https://wa.me/919999166302?text=Hi%20RADbuild%2C%20I%20would%20like%20to%20discuss%20a%20radiology%20project." target="_blank" rel="noopener" aria-label="Chat with RADbuild on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 016.988 2.896 9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.945c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.652a11.882 11.882 0 005.683 1.448h.005c6.581 0 11.94-5.359 11.943-11.945A11.868 11.868 0 0020.52 3.45"/></svg><span>WhatsApp</span></a></body></html>
