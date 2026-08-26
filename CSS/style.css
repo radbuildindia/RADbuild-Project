@@ -34,7 +34,7 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.025em;line-height:
 .brand-name{display:block;font-size:23px;line-height:1;letter-spacing:-.03em;color:var(--ink)}
 .brand-name .rad{font-weight:800;color:var(--accent)}
 .brand-name .build{font-weight:500;color:var(--ink)}
-.brand-sub{display:block;margin-top:6px;font-size:8.5px;font-weight:600;letter-spacing:.14em;line-height:1;color:var(--muted)}
+.brand-sub{display:block;margin-top:6px;max-width:196px;font-size:8px;font-weight:600;letter-spacing:.1em;line-height:1.45;color:var(--muted)}
 .nav-links{display:flex;align-items:center;gap:30px}
 .nav-links a{font-size:14px;font-weight:500;color:var(--body);transition:color .15s}
 .nav-links a:hover{color:var(--ink)}
@@ -236,7 +236,7 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.025em;line-height:
 }
 @media(max-width:450px){
   .brand-name{font-size:21px}
-  .brand-sub{font-size:7.5px}
+  .brand-sub{max-width:168px;font-size:7.5px;letter-spacing:.08em}
   .hero h1{font-size:36px}
   .page-hero h1{font-size:34px}
   .modality{padding:20px 16px}
