@@ -33,8 +33,8 @@
   --radius-lg:16px;
 
   /* measure */
-  --max:1080px;
-  --gutter:clamp(32px,8vw,168px);
+  --max:940px;
+  --gutter:clamp(40px,14vw,320px);
   --measure:68ch;
   --measure-text:58ch;
 
