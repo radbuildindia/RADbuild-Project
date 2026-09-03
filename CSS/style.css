@@ -11,7 +11,7 @@
   --wash:#F7F8FA;
   --white:#fff;
   --radius:8px;
-  --max:1120px;
+  --max:1060px;
   --measure-wide:820px;
   --measure:760px;
   --measure-text:680px;
@@ -26,7 +26,7 @@ img{max-width:100%;display:block}
 button,input,textarea{font:inherit;color:inherit}
 h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.025em;line-height:1.15}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
-.container{width:min(var(--max),calc(100% - 72px));margin-inline:auto}
+.container{width:min(var(--max),calc(100% - 112px));margin-inline:auto}
 .mono{font-variant-numeric:tabular-nums}
 
 /* header + wordmark */
@@ -246,7 +246,7 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.025em;line-height:
   .footer-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:760px){
-  .container{width:min(var(--max),calc(100% - 44px))}
+  .container{width:min(var(--max),calc(100% - 56px))}
   .nav{min-height:62px}
   .nav-links{display:none}
   .menu-toggle{display:block}
