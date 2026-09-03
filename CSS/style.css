@@ -409,3 +409,67 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.03em;line-height:1
 @media(prefers-reduced-motion:reduce){
   *{transition:none!important;scroll-behavior:auto!important}
 }
+
+/* ============================================================
+   Motion
+   Timings from ui-ux-pro-max: scroll reveal 400-600ms power2.out,
+   hover 200-300ms with a reversing transition. Swiss/minimal style
+   calls for 200-250ms hovers. All motion is additive and is fully
+   disabled under prefers-reduced-motion.
+   ============================================================ */
+:root{
+  --ease:cubic-bezier(.22,1,.36,1);          /* ~ power2.out */
+  --ease-soft:cubic-bezier(.4,0,.2,1);
+  --t-hover:220ms;                            /* Swiss style: 200-250ms */
+  --t-reveal:520ms;                           /* preset: 400-600ms      */
+}
+
+/* scroll reveal — class applied by script.js, never in markup */
+.rise{opacity:0;transform:translateY(16px);
+  transition:opacity var(--t-reveal) var(--ease),transform var(--t-reveal) var(--ease)}
+.rise-in{opacity:1;transform:none}
+
+/* hero entrance — the single focal animation on the page */
+.hero-enter{opacity:0;transform:translateY(20px);
+  transition:opacity 760ms var(--ease) 60ms,transform 760ms var(--ease) 60ms}
+.hero-enter-in{opacity:1;transform:none}
+
+/* hover micro-interactions — every one reverses on the same properties */
+.card,.related a,.doc,.project-card,.modality{
+  transition:background var(--t-hover) var(--ease-soft),
+             border-color var(--t-hover) var(--ease-soft),
+             transform var(--t-hover) var(--ease);
+}
+.related a:hover,.doc:hover{transform:translateY(-2px)}
+.btn{transition:background var(--t-hover) var(--ease-soft),
+                border-color var(--t-hover) var(--ease-soft),
+                color var(--t-hover) var(--ease-soft),
+                transform 120ms var(--ease)}
+.card-link,.footer-links a,.nav-links a,.crumbs a{transition:color var(--t-hover) var(--ease-soft)}
+
+/* animated underline on nav — decorative only, never the sole affordance */
+.nav-links a:not(.nav-cta){padding-bottom:3px}
+.nav-links a:not(.nav-cta)::after{
+  content:"";position:absolute;left:0;bottom:0;height:1.5px;width:100%;
+  background:var(--accent);transform:scaleX(0);transform-origin:right;
+  transition:transform var(--t-hover) var(--ease);
+}
+.nav-links a:not(.nav-cta):hover::after,
+.nav-links a.active:not(.nav-cta)::after{transform:scaleX(1);transform-origin:left}
+
+/* card-link nudge - arrow already lives in the markup */
+.card-link{display:inline-block;transition:color var(--t-hover) var(--ease-soft),transform var(--t-hover) var(--ease)}
+.card-link:hover{transform:translateX(3px)}
+
+/* FAQ disclosure - the +/- glyph swap already carries the state */
+.faq summary{transition:color var(--t-hover) var(--ease-soft)}
+.faq summary:hover{color:var(--accent)}
+
+/* focus is never animated away */
+:focus-visible{transition:none}
+
+@media(prefers-reduced-motion:reduce){
+  .rise,.hero-enter{opacity:1!important;transform:none!important;transition:none!important}
+  .nav-links a::after{transition:none}
+  .related a:hover,.doc:hover,.card-link:hover{transform:none}
+}
