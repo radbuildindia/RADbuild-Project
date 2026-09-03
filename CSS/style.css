@@ -46,7 +46,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
-  font-size:17px;line-height:1.65;color:var(--body);background:var(--white);
+  font-size:17px;line-height:1.5;color:var(--body);background:var(--white);
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 body.menu-open{overflow:hidden}
@@ -140,7 +140,7 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.03em;line-height:1
 }
 .hero h1 span{color:var(--sky)}
 .hero .eyebrow{color:var(--sky)}
-.hero-text{font-size:19px;line-height:1.6;color:rgba(255,255,255,.80);max-width:var(--measure-text)}
+.hero-text{font-size:19px;line-height:1.45;color:rgba(255,255,255,.80);max-width:var(--measure-text)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s7)}
 .hero .btn-secondary{border-color:rgba(255,255,255,.32);color:#fff}
 .hero .btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,.10)}
@@ -158,7 +158,7 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.03em;line-height:1
 .stat{padding:var(--s7) var(--s5) var(--s7) 0}
 .stat + .stat{padding-left:var(--s5);border-left:1px solid var(--line)}
 .stat strong{display:block;font-size:30px;font-weight:600;letter-spacing:-.035em;color:var(--ink);font-variant-numeric:tabular-nums}
-.stat span{display:block;margin-top:9px;font-size:12.5px;line-height:1.45;color:var(--muted)}
+.stat span{display:block;margin-top:8px;font-size:12.5px;line-height:1.35;color:var(--muted)}
 
 /* ---------- section heads ---------- */
 .section-head{max-width:var(--measure);margin-bottom:var(--s8)}
@@ -318,7 +318,7 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.03em;line-height:1
 .cta{background:linear-gradient(160deg,var(--ink) 0%,#161B22 100%);color:#fff}
 .cta-inner{padding:clamp(56px,7vw,88px) 0;display:flex;justify-content:space-between;align-items:center;gap:var(--s7);flex-wrap:wrap}
 .cta h2{font-size:clamp(25px,3vw,34px);color:#fff;letter-spacing:-.032em}
-.cta p{margin-top:9px;font-size:16px;color:rgba(255,255,255,.70)}
+.cta p{margin-top:6px;font-size:16px;color:rgba(255,255,255,.70)}
 .cta .btn{background:var(--accent);color:#fff;border-color:transparent}
 .cta .btn:hover{background:#fff;color:var(--ink)}
 
