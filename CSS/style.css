@@ -324,7 +324,7 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.03em;line-height:1
 
 /* ---------- footer ---------- */
 .footer{background:var(--ink);color:#fff;padding:var(--s9) 0 var(--s6)}
-.footer-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:var(--s7);padding-bottom:var(--s8)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.2fr;gap:var(--s7);padding-bottom:var(--s8)}
 .footer-brand p{margin-top:var(--s5);font-size:14px;color:rgba(255,255,255,.58);max-width:38ch}
 .footer .brand-name,.footer .brand-name .build{color:#fff}
 .footer .brand-sub{color:rgba(255,255,255,.45)}

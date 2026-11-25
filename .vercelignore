@@ -1,0 +1,4 @@
+# Local backups and stale drafts - never deploy, even from a `vercel` CLI run.
+index backup.html
+Radbuild Website/
+.claude/
