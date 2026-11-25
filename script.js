@@ -20,6 +20,75 @@ if (menuToggle && mobileNav) {
 const year = document.querySelector('[data-year]');
 if (year) year.textContent = new Date().getFullYear();
 
+/* Shared service links and footer entries. */
+(function () {
+  const stylesheet = document.querySelector('link[href*="CSS/style.css"]');
+  const prefix = stylesheet && stylesheet.getAttribute('href').startsWith('../') ? '../' : '';
+  const links = [
+    ['Floor Flatness Checking', `${prefix}floor-flatness-levelness-checking/`],
+    ['Structural Certificate', `${prefix}structural-certificate-oem/`],
+    ['Site Layout Approval', `${prefix}site-layout-approval/`],
+    ['Equipment Loading & Unloading', `${prefix}equipment-loading-unloading-difficult-sites/`]
+  ];
+
+  document.querySelectorAll('.nav-links').forEach(nav => {
+    const services = Array.from(nav.querySelectorAll('a')).find(link =>
+      link.getAttribute('href') === 'services.html' ||
+      link.getAttribute('href') === '../services.html'
+    );
+    if (!services || services.closest('.nav-dropdown')) return;
+
+    const dropdown = document.createElement('div');
+    dropdown.className = 'nav-dropdown';
+    dropdown.appendChild(services.cloneNode(true));
+
+    const menu = document.createElement('div');
+    menu.className = 'nav-dropdown-menu';
+    menu.setAttribute('aria-label', 'Additional services');
+    links.forEach(([label, href]) => {
+      const link = document.createElement('a');
+      link.href = href;
+      link.textContent = label;
+      menu.appendChild(link);
+    });
+
+    dropdown.appendChild(menu);
+    services.replaceWith(dropdown);
+  });
+
+  document.querySelectorAll('.mobile-nav').forEach(nav => {
+    const services = Array.from(nav.querySelectorAll('a')).find(link =>
+      link.getAttribute('href') === 'services.html' ||
+      link.getAttribute('href') === '../services.html'
+    );
+    if (!services || nav.querySelector('.mobile-service-links')) return;
+
+    const group = document.createElement('div');
+    group.className = 'mobile-service-links';
+    links.forEach(([label, href]) => {
+      const link = document.createElement('a');
+      link.href = href;
+      link.textContent = label;
+      group.appendChild(link);
+    });
+    services.after(group);
+  });
+
+  document.querySelectorAll('.footer-grid').forEach(grid => {
+    grid.querySelectorAll('h4').forEach(heading => {
+      if (heading.textContent.trim() !== 'Guides') return;
+      const container = heading.nextElementSibling;
+      if (!container || container.querySelector('a[href*="floor-flatness-levelness-checking"]')) return;
+      links.forEach(([label, href]) => {
+        const link = document.createElement('a');
+        link.href = href;
+        link.textContent = label;
+        container.appendChild(link);
+      });
+    });
+  });
+})();
+
 /* ------------------------------------------------------------------
    Scroll reveal.
    Classes are added by JS, never in the markup, so with JS disabled

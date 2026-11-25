@@ -83,6 +83,20 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.03em;line-height:1
 .nav-links a{position:relative;font-size:14px;font-weight:500;color:var(--body);transition:color .15s}
 .nav-links a:hover{color:var(--ink)}
 .nav-links a.active{color:var(--ink);font-weight:600}
+.nav-dropdown{position:relative;padding-bottom:3px}
+.nav-dropdown > a{display:block}
+.nav-dropdown-menu{
+  position:absolute;top:calc(100% + 10px);left:-14px;width:220px;padding:7px;
+  border:1px solid var(--line);border-radius:8px;background:#fff;
+  box-shadow:0 12px 28px rgba(24,31,28,.12);opacity:0;visibility:hidden;
+  transform:translateY(-5px);transition:opacity .15s,transform .15s,visibility .15s;z-index:20
+}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu{
+  opacity:1;visibility:visible;transform:translateY(0)
+}
+.nav-dropdown-menu a{display:block;padding:10px 11px;border-radius:6px;font-size:13px;line-height:1.35}
+.nav-dropdown-menu a:hover{background:var(--panel);color:var(--ink)}
+.nav-dropdown-menu a::after{display:none}
 .nav-links .nav-cta{
   padding:10px 18px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;
   transition:background .15s;
@@ -374,6 +388,9 @@ h1,h2,h3,h4{color:var(--ink);font-weight:600;letter-spacing:-.03em;line-height:1
   }
   .mobile-nav a:last-child{border-bottom:0}
   .mobile-nav .mobile-cta{color:var(--accent)}
+  .mobile-service-links{margin:-12px 0 10px;width:min(var(--max),calc(100% - var(--gutter)));margin-inline:auto}
+  .mobile-service-links a{padding:10px 14px;border-bottom:1px solid var(--line);font-size:13px}
+  .mobile-service-links a:last-child{border-bottom:0}
 
   .hero-text{font-size:17px}
   .hero-bg::after{background:linear-gradient(180deg,rgba(9,12,17,.86) 0%,rgba(9,12,17,.80) 100%)}
